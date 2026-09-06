@@ -51,6 +51,11 @@ a {
 ul { list-style: none; margin: 0; padding: 0; }
 figure { margin: 0; }
 
+/* Mobile-only line-break helpers (see @media 720px override): desktop keeps
+   its own explicit <br> placement untouched. */
+.sp-br { display: none; }
+.pc-br { display: inline; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-jp-serif);
   font-weight: 500;
@@ -1308,11 +1313,15 @@ section {
 
   .hero-media::after {
     background: linear-gradient(0deg,
-      rgba(247, 244, 239, 0.94) 0%,
-      rgba(247, 244, 239, 0.86) 34%,
-      rgba(247, 244, 239, 0.42) 60%,
-      rgba(247, 244, 239, 0) 82%);
+      rgba(247, 244, 239, 0.8) 0%,
+      rgba(247, 244, 239, 0.7) 34%,
+      rgba(247, 244, 239, 0.34) 60%,
+      rgba(247, 244, 239, 0) 84%);
   }
+
+  /* Mobile-only line-break helpers: keep desktop <br> placement untouched */
+  .sp-br { display: inline; }
+  .pc-br { display: none; }
 
   .hero-inner {
     margin: 0;
@@ -1367,6 +1376,10 @@ section {
   .footer-grid { grid-template-columns: 1fr; gap: 44px; }
 
   .page-hero { padding: 160px 0 60px; }
+  .page-hero h1 { font-size: clamp(24px, 7vw, 30px); }
+
+  .section-head h2 { font-size: clamp(23px, 6vw, 28px); }
+  .cta-band h2 { font-size: clamp(23px, 6vw, 28px); }
 }
 
 @media (max-width: 480px) {
