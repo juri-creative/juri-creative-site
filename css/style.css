@@ -732,6 +732,41 @@ section {
   gap: 28px;
 }
 
+.price-lead {
+  text-align: center;
+  font-size: 15px;
+  color: var(--c-ink);
+  max-width: 620px;
+  margin: 0 auto 28px;
+  line-height: 1.9;
+}
+
+.price-formula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 14px;
+  max-width: 720px;
+  margin: 0 auto 64px;
+  padding: 22px 24px;
+  border: 1px solid var(--c-border);
+  background: var(--c-greige-lighter);
+}
+
+.price-formula span {
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  color: var(--c-black);
+  white-space: nowrap;
+}
+
+.price-formula .plus {
+  color: var(--c-greige-dark);
+  font-family: var(--font-en);
+  font-size: 15px;
+}
+
 .menu-heading {
   font-family: var(--font-jp-serif);
   font-size: 15px;
@@ -894,7 +929,50 @@ section {
 }
 
 .option-list .row span:first-child { color: var(--c-ink); }
-.option-list .row span:last-child { color: var(--c-sub); font-family: var(--font-en); letter-spacing: 0.05em; }
+.option-list .row span:last-child { color: var(--c-ink); font-family: var(--font-en); letter-spacing: 0.05em; }
+
+.option-list .row-label { color: var(--c-ink); }
+.option-list .row-value { color: var(--c-ink); font-family: var(--font-en); letter-spacing: 0.05em; white-space: nowrap; }
+
+.option-list .row-desc {
+  flex-basis: 100%;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--c-sub);
+  line-height: 1.8;
+}
+
+.price-example {
+  text-align: center;
+  border: 1px solid var(--c-border);
+  background: var(--c-white);
+  padding: 34px 24px;
+}
+
+.price-example-formula {
+  font-size: 14px;
+  color: var(--c-ink);
+  margin-bottom: 12px;
+}
+
+.price-example-total {
+  font-family: var(--font-en);
+  font-size: 22px;
+  color: var(--c-black);
+  letter-spacing: 0.01em;
+}
+
+.price-example-total .eq {
+  margin: 0 2px;
+  color: var(--c-greige-dark);
+}
+
+.price-example-total small {
+  font-size: 12px;
+  font-family: var(--font-jp);
+  color: var(--c-sub);
+  margin-left: 4px;
+}
 
 /* ---------- Cast roster ---------- */
 
@@ -1400,6 +1478,9 @@ section {
   .footer-grid { grid-template-columns: 1fr; gap: 44px; }
 
   .page-hero { padding: 160px 0 60px; }
+
+  .price-example-total { font-size: 18px; }
+  .price-formula { padding: 18px 16px; gap: 8px 10px; }
 
   .service-icon { width: 28px; height: 28px; }
   .page-hero h1 { font-size: clamp(24px, 7vw, 30px); }
