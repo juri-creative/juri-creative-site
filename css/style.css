@@ -1413,11 +1413,13 @@ section {
   .hero { align-items: flex-end; }
 
   .hero-media::after {
-    background: linear-gradient(0deg,
-      rgba(247, 244, 239, 0.8) 0%,
-      rgba(247, 244, 239, 0.7) 34%,
-      rgba(247, 244, 239, 0.34) 60%,
-      rgba(247, 244, 239, 0) 84%);
+    background:
+      linear-gradient(0deg,
+        rgba(247, 244, 239, 0.8) 0%,
+        rgba(247, 244, 239, 0.7) 34%,
+        rgba(247, 244, 239, 0.34) 60%,
+        rgba(247, 244, 239, 0) 84%),
+      rgba(247, 244, 239, 0.34);
   }
 
   /* Mobile-only line-break helpers: keep desktop <br> placement untouched */
@@ -1477,13 +1479,13 @@ section {
 
   .footer-grid { grid-template-columns: 1fr; gap: 44px; }
 
-  .page-hero { padding: 160px 0 60px; }
+  .page-hero { padding: 160px 7vw 60px; }
 
   .price-example-total { font-size: 18px; }
   .price-formula { padding: 18px 16px; gap: 8px 10px; }
 
   .service-icon { width: 28px; height: 28px; }
-  .page-hero h1 { font-size: clamp(24px, 7vw, 30px); }
+  .page-hero h1 { font-size: clamp(24px, 7vw, 30px); letter-spacing: 0.06em; line-height: 1.5; }
 
   .section-head h2 { font-size: clamp(23px, 6vw, 28px); }
   .cta-band h2 { font-size: clamp(23px, 6vw, 28px); }
