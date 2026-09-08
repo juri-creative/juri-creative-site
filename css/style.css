@@ -563,6 +563,54 @@ section {
 .about p { color: var(--c-sub); font-size: 15px; }
 .about p + p { margin-top: 18px; }
 
+.about.recruit-about {
+  gap: clamp(48px, 8vw, 120px);
+}
+
+/* ---------- Recruit photo composition (editorial, layered) ---------- */
+
+.recruit-photos {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 0.86;
+  margin: 0 auto;
+}
+
+.recruit-photos::before {
+  content: "";
+  position: absolute;
+  top: 9%;
+  left: -7%;
+  width: 62%;
+  height: 66%;
+  background: var(--c-greige-lighter);
+  z-index: 0;
+}
+
+.recruit-photo {
+  position: absolute;
+  margin: 0;
+}
+
+.recruit-photo-primary {
+  top: 0;
+  left: 0;
+  width: 72%;
+  height: 79%;
+  z-index: 2;
+}
+
+.recruit-photo-secondary {
+  right: 0;
+  bottom: 0;
+  width: 47%;
+  height: 53%;
+  z-index: 3;
+  border: 7px solid var(--c-white);
+  box-shadow: 0 20px 38px -20px rgba(58, 56, 53, 0.32);
+}
+
 /* ---------- Service grid ---------- */
 
 .service-grid {
