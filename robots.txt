@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juri-creative-site.juribuuu.workers.dev/sitemap.xml
