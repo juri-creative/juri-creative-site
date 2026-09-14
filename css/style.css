@@ -377,6 +377,48 @@ section {
   font-size: 14px;
 }
 
+.breadcrumb {
+  margin-bottom: 22px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--c-sub);
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "\FF1E";
+  margin: 0 9px;
+  color: var(--c-border);
+  font-size: 10px;
+}
+
+.breadcrumb a {
+  color: var(--c-sub);
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--c-black);
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: var(--c-greige-dark);
+}
+
 /* ---------- Buttons ---------- */
 
 .btn {
