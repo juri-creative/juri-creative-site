@@ -1211,6 +1211,44 @@ section {
 
 .price-note + .price-note { margin-top: 16px; }
 
+.included-list {
+  max-width: 640px;
+  margin: 36px auto 0;
+  padding: 28px 32px;
+  border: 1px solid var(--c-border);
+  background: var(--c-white);
+}
+
+.included-list h3 {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--c-black);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.included-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 28px;
+}
+
+.included-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--c-ink);
+  line-height: 1.7;
+}
+
+.included-list li::before {
+  content: "✓";
+  flex-shrink: 0;
+  color: var(--c-greige-dark);
+  font-family: var(--font-en);
+}
+
 .option-list {
   margin-top: 70px;
   border-top: 1px solid var(--c-border);
@@ -1802,6 +1840,8 @@ section {
 
   .price-example-total { font-size: 18px; }
   .price-formula { padding: 18px 16px; gap: 8px 10px; }
+  .included-list { padding: 24px 20px; }
+  .included-list ul { grid-template-columns: 1fr; gap: 10px; }
 
   .service-icon { width: 28px; height: 28px; }
   .page-hero h1 { font-size: clamp(24px, 7vw, 30px); letter-spacing: 0.06em; line-height: 1.5; }
