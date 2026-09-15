@@ -61,19 +61,11 @@
     <div class="section-head reveal">
       <span class="eyebrow">Form</span>
       <h2>お問い合わせフォーム</h2>
-      <p>商品撮影・モデル撮影・SNS用動画撮影・<br class="sp-br">お見積りなど、お気軽にご相談ください。<br>商品郵送での撮影にも対応しています。</p>
+      <p>まだ撮影内容が決まっていない段階でも<br class="sp-br">大丈夫です。<br>商品・ご予算・撮りたいイメージなど、<br class="sp-br">分かる範囲でお知らせください。</p>
     </div>
 
     <form class="form-shell js-formspree-form reveal" action="https://formspree.io/f/mbgjablp" method="POST">
       <input type="hidden" name="_subject" value="【HPお問い合わせ】撮影のご相談">
-      <div class="form-row">
-        <label>お問い合わせ種別<span class="req">必須</span></label>
-        <div class="radio-group">
-          <label><input type="radio" name="category" value="撮影のご依頼・お見積り" required checked> 撮影のご依頼・お見積り</label>
-          <label><input type="radio" name="category" value="モデル出演のご依頼"> モデル出演のご依頼</label>
-          <label><input type="radio" name="category" value="その他のお問い合わせ"> その他のお問い合わせ</label>
-        </div>
-      </div>
 
       <div class="form-grid-2">
         <div class="form-row">
@@ -81,8 +73,8 @@
           <input type="text" name="name" required placeholder="例：山田 太郎">
         </div>
         <div class="form-row">
-          <label>会社名・屋号<span class="opt">任意</span></label>
-          <input type="text" name="company" placeholder="例：株式会社〇〇">
+          <label>会社名・ブランド名<span class="opt">任意</span></label>
+          <input type="text" name="company" placeholder="例：株式会社〇〇 ／ ブランド名">
         </div>
       </div>
 
@@ -92,43 +84,92 @@
           <input type="email" name="email" required placeholder="例：example@mail.com">
         </div>
         <div class="form-row">
-          <label>電話番号<span class="opt">任意</span></label>
-          <input type="tel" name="phone" placeholder="例：090-0000-0000">
+          <label>希望プラン<span class="opt">未定でも可</span></label>
+          <select name="plan">
+            <option value="">未定・相談して決めたい</option>
+            <option value="お試し撮影プラン">お試し撮影プラン</option>
+            <option value="世界観撮影プラン">世界観撮影プラン</option>
+            <option value="しっかり撮影プラン">しっかり撮影プラン</option>
+            <option value="1日撮影プラン">1日撮影プラン</option>
+            <option value="その他・相談したい">その他・相談したい</option>
+          </select>
         </div>
       </div>
 
       <div class="form-grid-2">
         <div class="form-row">
-          <label>撮影ご希望日<span class="opt">任意</span></label>
-          <input type="text" name="preferred_date" placeholder="例：2026年10月上旬 ／ 未定">
+          <label>商品数<span class="opt">任意</span></label>
+          <input type="text" name="product_count" placeholder="例：3点 ／ 未定">
         </div>
         <div class="form-row">
-          <label>撮影場所（希望エリア）<span class="opt">任意</span></label>
-          <input type="text" name="location" placeholder="例：大阪市内 ／ 未定">
+          <label>希望撮影日<span class="opt">未定でも可</span></label>
+          <input type="text" name="preferred_date" placeholder="例：2026年10月上旬 ／ 未定">
         </div>
       </div>
 
       <div class="form-row">
-        <label>ご予算感<span class="opt">任意</span></label>
+        <label>ご希望の撮影内容<span class="opt">任意・複数選択可</span></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="shoot_type[]" value="商品撮影"> 商品撮影</label>
+          <label><input type="checkbox" name="shoot_type[]" value="モデル撮影"> モデル撮影</label>
+          <label><input type="checkbox" name="shoot_type[]" value="アパレル撮影"> アパレル撮影</label>
+          <label><input type="checkbox" name="shoot_type[]" value="SNS用写真・縦動画"> SNS用写真・縦動画</label>
+          <label><input type="checkbox" name="shoot_type[]" value="その他"> その他</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>希望する撮影方法<span class="opt">任意</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="shoot_method" value="スマホ撮影"> スマホ撮影</label>
+          <label><input type="radio" name="shoot_method" value="カメラマン撮影"> カメラマン撮影</label>
+          <label><input type="radio" name="shoot_method" value="相談して決めたい"> 相談して決めたい</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>モデルについて<span class="opt">任意</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="model_request" value="JURI本人の出演希望"> JURI本人の出演希望</label>
+          <label><input type="radio" name="model_request" value="別モデルの手配希望"> 別モデルの手配希望</label>
+          <label><input type="radio" name="model_request" value="モデル不要"> モデル不要</label>
+          <label><input type="radio" name="model_request" value="相談して決めたい"> 相談して決めたい</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>撮影場所<span class="opt">任意</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="location_status" value="決まっている"> 決まっている</label>
+          <label><input type="radio" name="location_status" value="手配希望"> 手配希望</label>
+          <label><input type="radio" name="location_status" value="相談して決めたい"> 相談して決めたい</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>写真／動画の使用目的<span class="opt">任意・複数選択可</span></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="usage[]" value="SNS"> SNS</label>
+          <label><input type="checkbox" name="usage[]" value="ECサイト"> ECサイト</label>
+          <label><input type="checkbox" name="usage[]" value="Webサイト"> Webサイト</label>
+          <label><input type="checkbox" name="usage[]" value="広告"> 広告</label>
+          <label><input type="checkbox" name="usage[]" value="その他"> その他</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>ご予算<span class="opt">任意</span></label>
         <input type="text" name="budget" placeholder="例：10万円前後 ／ 未定">
       </div>
 
       <div class="form-row">
-        <label>ご希望の内容<span class="req">必須</span></label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="service[]" value="モデル出演"> モデル出演</label>
-          <label><input type="checkbox" name="service[]" value="カメラマン手配"> カメラマン手配</label>
-          <label><input type="checkbox" name="service[]" value="撮影場所手配"> 撮影場所手配</label>
-          <label><input type="checkbox" name="service[]" value="モデルキャスティング"> モデルキャスティング</label>
-          <label><input type="checkbox" name="service[]" value="撮影ディレクション"> 撮影ディレクション</label>
-          <label><input type="checkbox" name="service[]" value="商品撮影"> 商品撮影</label>
-          <label><input type="checkbox" name="service[]" value="SNS用写真・動画撮影"> SNS用写真・動画撮影</label>
-        </div>
+        <label>希望する雰囲気や参考イメージ<span class="opt">任意</span></label>
+        <textarea name="image_reference" placeholder="参考にしたい写真・アカウント・雰囲気などがあればご記入ください。"></textarea>
       </div>
 
       <div class="form-row">
-        <label>お問い合わせ内容<span class="req">必須</span></label>
-        <textarea name="message" required placeholder="撮影の目的、イメージ、ご要望などをご自由にご記入ください。"></textarea>
+        <label>その他ご相談内容<span class="opt">任意</span></label>
+        <textarea name="message" placeholder="撮影の目的、イメージ、ご要望などをご自由にご記入ください。"></textarea>
       </div>
 
       <div class="form-submit-row">
