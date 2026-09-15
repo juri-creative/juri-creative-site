@@ -1142,6 +1142,14 @@ section {
   justify-content: center;
 }
 
+@media (min-width: 901px) {
+  .price-card h3 {
+    font-size: 18px;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+}
+
 .price-card .price {
   margin: 26px 0;
   font-family: var(--font-en);
