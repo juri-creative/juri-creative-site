@@ -1861,3 +1861,22 @@ section {
 @media (max-width: 480px) {
   .service-grid { grid-template-columns: 1fr; }
 }
+
+/* Consultation form and plan links: retain the existing palette and typography. */
+#contact-form, #price-options { scroll-margin-top: 110px; }
+#contact-form .form-row input, #contact-form .form-row select,
+#contact-form .form-row textarea { font-size: 16px; }
+#contact-form fieldset { border: 0; padding: 0; min-width: 0; }
+#contact-form legend { font-size: 13px; margin-bottom: 10px; padding: 0; }
+#contact-form legend .opt { font-size: 11px; color: var(--c-sub); margin-left: 8px; }
+#contact-form .checkbox-group label, #contact-form .radio-group label { min-height: 44px; margin: 0; cursor: pointer; }
+#contact-form input[type="checkbox"], #contact-form input[type="radio"] { accent-color: var(--c-black); }
+.form-details { border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+.form-details summary { padding: 20px 4px; cursor: pointer; font-size: 14px; color: var(--c-black); }
+.form-details-body { padding: 12px 4px 0; }
+.form-details summary:focus-visible, .plan-contact:focus-visible { outline: 2px solid var(--c-black); outline-offset: 4px; }
+.price-card .plan-contact { font-family: var(--font-jp); font-size: 12px; letter-spacing: 0.01em; padding: 15px 8px; justify-content: center; white-space: normal; margin-top: 22px; }
+#contact-form .form-submit-row button { max-width: 100%; padding: 18px 24px; min-height: 48px; font-family: var(--font-jp); letter-spacing: 0.05em; }
+@media (max-width: 720px) {
+  #contact-form .radio-group, #contact-form .checkbox-group { gap: 4px 20px; }
+}

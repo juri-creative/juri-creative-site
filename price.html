@@ -5,12 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>商品撮影・モデル撮影の料金プラン｜YUTO Production 大阪</title>
-<meta name="description" content="商品撮影・モデル撮影・撮影ディレクションをまとめてお任せいただける撮影プランと料金の目安をご案内します。大阪を中心に、EC・SNS用の写真や動画制作にも対応しています。">
+<meta name="description" content="商品撮影・モデル撮影の基本プランは税込19,800円から。撮影時間、基本プランに含まれる内容、モデル出演・カメラマン手配などの追加費用をご案内します。大阪拠点・商品郵送は全国対応。">
 <link rel="canonical" href="https://juri-creative-site.juribuuu.workers.dev/price">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YUTO production">
 <meta property="og:title" content="商品撮影・モデル撮影の料金プラン｜YUTO Production 大阪">
-<meta property="og:description" content="商品撮影・モデル撮影・撮影ディレクションをまとめてお任せいただける撮影プランと料金の目安をご案内します。大阪を中心に、EC・SNS用の写真や動画制作にも対応しています。">
+<meta property="og:description" content="商品撮影・モデル撮影の基本プランは税込19,800円から。撮影時間、基本プランに含まれる内容、モデル出演・カメラマン手配などの追加費用をご案内します。大阪拠点・商品郵送は全国対応。">
 <meta property="og:url" content="https://juri-creative-site.juribuuu.workers.dev/price">
 <meta property="og:image" content="https://juri-creative-site.juribuuu.workers.dev/images/top.jpg">
 <meta property="og:image:width" content="1206">
@@ -22,6 +22,56 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style id="price-readability">
+/* Local to this page; keep the shared palette, fonts and spacing intact. */
+.page-hero p,
+.section-head p,
+.price-card .desc,
+.price-card .duration,
+.price-card .price small,
+.price-note,
+.option-list .row-desc,
+.price-example-total small,
+.cta-band p,
+.eyebrow,
+.price-card .plan-en,
+.price-formula .plus,
+.price-example-total .eq {
+  color: #655d53;
+}
+.price-card .desc,
+.price-card .duration,
+.price-card .price small,
+.price-note,
+.option-list .row-desc,
+.price-example-total small,
+.plan-contact {
+  font-weight: 400;
+}
+@media (max-width: 720px) {
+  .page-hero p,
+  .section-head p,
+  .price-lead,
+  .price-card .desc,
+  .option-list .row-desc,
+  .price-example-formula,
+  .included-list li,
+  .cta-band p {
+    font-size: 15px;
+  }
+  .price-card .duration,
+  .price-card .price small,
+  .price-note,
+  .price-example-total small,
+  .price-card .plan-en,
+  .price-formula span,
+  .btn,
+  .price-card .plan-contact {
+    font-size: 14px;
+  }
+}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,15 +185,15 @@
 
 <section class="page-hero">
   <span class="eyebrow en">Price</span>
-  <h1>PRICE</h1>
+  <h1>撮影料金・プラン</h1>
   <p>商品をお送りいただき、<br class="sp-br">モデル・撮影場所・カメラマンまで<br>まとめてお任せいただけるプランを<br class="sp-br">ご用意しています。</p>
 </section>
 
 <section>
   <div class="container">
-    <p class="price-lead reveal">料金は「基本撮影プラン」の中で完結し、<br class="sp-br">撮影内容に合わせて必要なものだけを追加していただく仕組みです。</p>
+    <p class="price-lead reveal">基本撮影プランに、必要なオプション・実費を加えてお見積りします。<br>モデル出演料・カメラマン撮影・施設利用料などは、必要に応じて別途かかります。</p>
     <div class="price-formula reveal">
-      <span>基本撮影プラン</span><span class="plus" aria-hidden="true">+</span><span>必要なものだけ追加</span>
+      <span>基本撮影プラン</span><span class="plus" aria-hidden="true">+</span><span>必要なオプション・実費</span>
     </div>
 
     <div class="section-head reveal">
@@ -152,13 +202,14 @@
       <p>商品をお送りいただき、<br class="sp-br">モデル・撮影場所・カメラマンなど、<br>必要な内容をまとめて手配できます。</p>
     </div>
 
-    <div class="price-grid reveal">
+    <div id="plans" class="price-grid reveal">
       <div class="price-card">
         <span class="plan-en">TRIAL</span>
         <h3>お試し撮影プラン</h3>
         <div class="price">¥19,800<small>／税込</small></div>
         <div class="duration">撮影時間：60分まで</div>
         <p class="desc">シンプルな商品撮影やSNS用素材向け。<br>少ない商品数・少ないカット数で、<br class="sp-br">まず試してみたい方におすすめです。</p>
+        <a class="btn btn-outline plan-contact" href="/contact?plan=%E3%81%8A%E8%A9%A6%E3%81%97%E6%92%AE%E5%BD%B1%E3%83%97%E3%83%A9%E3%83%B3#contact-form" aria-label="お試し撮影プランについて相談する">このプランについて相談する</a>
       </div>
       <div class="price-card">
         <span class="plan-en">CONCEPT</span>
@@ -166,6 +217,7 @@
         <div class="price">¥33,000<small>／税込</small></div>
         <div class="duration">撮影時間：2時間まで</div>
         <p class="desc">商品やブランドの雰囲気に合わせて、<br class="sp-br">撮影場所や小物、構成まで含めて撮影します。</p>
+        <a class="btn btn-outline plan-contact" href="/contact?plan=%E4%B8%96%E7%95%8C%E8%A6%B3%E6%92%AE%E5%BD%B1%E3%83%97%E3%83%A9%E3%83%B3#contact-form" aria-label="世界観撮影プランについて相談する">このプランについて相談する</a>
       </div>
       <div class="price-card">
         <span class="plan-en">SIGNATURE</span>
@@ -173,6 +225,7 @@
         <div class="price">¥55,000<small>／税込</small></div>
         <div class="duration">撮影時間：4時間まで</div>
         <p class="desc">撮影シーンやカット数が多い方向け。<br>複数パターンをまとめて<br class="sp-br">しっかり撮影したい場合におすすめです。</p>
+        <a class="btn btn-outline plan-contact" href="/contact?plan=%E3%81%97%E3%81%A3%E3%81%8B%E3%82%8A%E6%92%AE%E5%BD%B1%E3%83%97%E3%83%A9%E3%83%B3#contact-form" aria-label="しっかり撮影プランについて相談する">このプランについて相談する</a>
       </div>
       <div class="price-card">
         <span class="plan-en">FULL DAY</span>
@@ -180,6 +233,7 @@
         <div class="price">¥77,000<small>／税込</small></div>
         <div class="duration">撮影時間：8時間まで</div>
         <p class="desc">1日かけて、複数シーンをまとめて<br class="sp-br">撮影したい方向けのプランです。<br>ロケーション移動を含む撮影にも対応します。</p>
+        <a class="btn btn-outline plan-contact" href="/contact?plan=1%E6%97%A5%E6%92%AE%E5%BD%B1%E3%83%97%E3%83%A9%E3%83%B3#contact-form" aria-label="1日撮影プランについて相談する">このプランについて相談する</a>
       </div>
     </div>
 
@@ -195,6 +249,8 @@
       </ul>
     </div>
 
+    <p class="price-note reveal">モデル出演・カメラマン撮影・施設利用料などの<br class="sp-br">別途費用は、<a class="link-underline" href="#price-options">追加費用の一覧</a>をご確認ください。</p>
+
     <p class="price-note reveal">
       ※撮影時間は目安です。<br>
       ※商品数・必要カット数・撮影内容によって<br class="sp-br">料金が変動する場合があります。
@@ -204,7 +260,7 @@
   </div>
 </section>
 
-<section style="background:var(--c-greige-lighter);padding:64px 0;">
+<section id="price-options" style="background:var(--c-greige-lighter);padding:64px 0;">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Option</span>
@@ -261,10 +317,11 @@
 <section style="padding:56px 0;">
   <div class="container" style="max-width:560px;">
     <div class="price-example reveal">
-      <p class="price-example-formula">例：お試し撮影プラン＋衣装持参（1コーデ追加）</p>
+      <p class="price-example-formula">基本プラン＋衣装追加の計算例<br>お試し撮影プラン＋衣装持参（1コーデ追加）</p>
       <p class="price-example-total">¥19,800＋¥3,000<span class="eq">＝</span>¥22,800<small>（税込）</small></p>
+      <p class="price-note">モデル出演料、交通費、施設利用料などは、<br class="sp-br">必要な場合に別途加算されます。</p>
     </div>
-    <p class="price-note reveal">モデル出演料、交通費、施設利用料などは、<br class="sp-br">必要な場合に別途加算されます。</p>
+    <p class="price-note reveal">撮影内容に応じた総額をお見積りいたします。</p>
   </div>
 </section>
 

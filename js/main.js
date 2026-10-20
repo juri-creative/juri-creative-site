@@ -98,14 +98,69 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Preselect only a known plan, and expose it for review before sending.
+  var planSelect = document.querySelector('#contact-form select[name="plan"]');
+  if (planSelect) {
+    var requestedPlan = new URLSearchParams(window.location.search).get('plan');
+    if (requestedPlan && Array.from(planSelect.options).some(function (option) { return option.value === requestedPlan; })) {
+      planSelect.value = requestedPlan;
+      var details = document.getElementById('contact-details');
+      if (details) details.open = true;
+    }
+  }
+
   // Formspree-backed form submission (AJAX, no page reload)
   var forms = document.querySelectorAll('.js-formspree-form');
   forms.forEach(function (form) {
+    // Preserve the original submission behavior for model entries and other forms.
+    if (form.id !== 'contact-form') {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var msg = form.querySelector('.form-message');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            if (response.ok) {
+              if (msg) {
+                msg.textContent = 'お問い合わせありがとうございます。内容を確認後、ご連絡いたします。';
+                msg.classList.add('is-visible');
+              }
+              form.reset();
+            } else {
+              if (msg) {
+                msg.textContent = '送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、メールにて直接ご連絡ください。';
+                msg.classList.add('is-visible');
+              }
+            }
+          })
+          .catch(function () {
+            if (msg) {
+              msg.textContent = '送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、メールにて直接ご連絡ください。';
+              msg.classList.add('is-visible');
+            }
+          })
+          .finally(function () {
+            if (submitBtn) submitBtn.disabled = false;
+          });
+      });
+      return;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var msg = form.querySelector('.form-message');
       var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
+      if (submitBtn && submitBtn.disabled) return;
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '送信中…'; }
+      form.setAttribute('aria-busy', 'true');
+      if (msg) { msg.textContent = '送信しています。そのままお待ちください。'; msg.classList.add('is-visible'); }
 
       fetch(form.action, {
         method: 'POST',
@@ -115,25 +170,27 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (response) {
           if (response.ok) {
             if (msg) {
-              msg.textContent = 'お問い合わせありがとうございます。内容を確認後、ご連絡いたします。';
+              msg.textContent = 'お問い合わせを受け付けました。内容を確認後、ご連絡いたします。';
               msg.classList.add('is-visible');
             }
             form.reset();
+            if (msg) msg.focus();
           } else {
             if (msg) {
-              msg.textContent = '送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、メールにて直接ご連絡ください。';
+              msg.textContent = '送信を完了できませんでした。入力内容は残っています。通信状況をご確認のうえ、時間をおいて再度送信してください。';
               msg.classList.add('is-visible');
             }
           }
         })
         .catch(function () {
           if (msg) {
-            msg.textContent = '送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、メールにて直接ご連絡ください。';
+            msg.textContent = '送信を完了できませんでした。入力内容は残っています。通信状況をご確認のうえ、時間をおいて再度送信してください。';
             msg.classList.add('is-visible');
           }
         })
         .finally(function () {
-          if (submitBtn) submitBtn.disabled = false;
+          form.removeAttribute('aria-busy');
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
         });
     });
   });
